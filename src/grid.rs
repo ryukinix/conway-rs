@@ -5,19 +5,19 @@ use std::fmt;
 #[derive(Debug)]
 pub struct Grid {
     pub cells: Vec<Vec<Cell>>,
-    width: i32 ,
-    heigth: i32 ,
+    width: usize ,
+    heigth: usize ,
 }
 
 
 //* Grid abstraction as 2D plane containing the cells and its state
 impl Grid {
     // Create a new grid based on the width and heigth
-    pub fn new(width: i32 , heigth: i32 ) -> Grid {
-        let mut grid: Vec<Vec<Cell>> = Vec::with_capacity(width as usize);
-        for y in 0..heigth {
+    pub fn new(width: usize , heigth: usize ) -> Grid {
+        let mut grid: Vec<Vec<Cell>> = Vec::with_capacity(width);
+        for y in 0..heigth as i32 {
             let mut line: Vec<Cell> = Vec::new();
-            for x in 0..width {
+            for x in 0..width as i32 {
                 line.push(Cell::new(true, x, y));
             }
             grid.push(line);
@@ -27,7 +27,7 @@ impl Grid {
 
     // Generate a new grid using random numbers to determine
     // the state of the cells
-    pub fn random_grid(width: i32, heigth: i32) -> Grid {
+    pub fn random_grid(width: usize, heigth: usize) -> Grid {
         let mut grid = Grid::new(width, heigth);
         grid.cells = grid.cells.iter()
                                .map(|line| line.iter()
@@ -44,7 +44,7 @@ impl Grid {
         let mut generation = Grid::new(self.width, self.heigth); 
         for (y, line) in generation.cells.iter_mut().enumerate() {
             for (x, cell) in line.iter_mut().enumerate() {
-                *cell = self.cells[y][x].update(self.neighbors(cell));
+                *cell = self.cell(x,y).update(self.neighbors(cell));
             }
         }
         generation
@@ -52,8 +52,8 @@ impl Grid {
 
     // access the internal vector of grid based on the
     // 2D point (x,y). Returns the cell
-    pub fn cell(&self, x:i32, y:i32)  -> &Cell {
-        &self.cells[y as usize][x as usize]
+    pub fn cell(&self, x:usize, y:usize)  -> &Cell {
+        &self.cells[y][x]
     }
 
     // Return the number of neighbors alive from a
@@ -72,9 +72,9 @@ impl Grid {
                                 Point{x: x - 1, y: y + 1}];
         
         for point in neighbors_points.iter() {
-            if point.x >= 0 && point.x < self.width && 
-               point.y >= 0 && point.y < self.heigth {
-                if self.cell(point.x, point.y).alive {
+            if point.x >= 0 && point.x < self.width as i32 && 
+               point.y >= 0 && point.y < self.heigth as i32 {
+                if self.cell(point.x as usize, point.y as usize).alive {
                     neighbors_count += 1;
                 }
             }
