@@ -25,6 +25,11 @@ impl Cell {
         Cell{alive: state, point: Point{x: x, y: y}}
     }
 
+    pub fn state(&self, s: bool) -> Cell {
+        Cell{alive: s,
+             point: Point{x:self.point.x, y:self.point.y}}
+    }
+
     // apply logic for a new state based on the number of neighbors
     pub fn update(&self, neighbors: u8) -> Cell {
         let state = match self.alive {

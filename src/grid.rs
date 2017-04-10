@@ -29,11 +29,11 @@ impl Grid {
     // the state of the cells
     pub fn random_grid(width: i32, heigth: i32) -> Grid {
         let mut grid = Grid::new(width, heigth);
-        for line in grid.cells.iter_mut() {
-            for cell in line.iter_mut() {
-                cell.alive = random_state()
-            }
-        }
+        grid.cells = grid.cells.iter()
+                               .map(|line| line.iter()
+                                               .map(|cell| cell.state(random_state()))
+                                               .collect())
+                               .collect();
         grid
     }
 
