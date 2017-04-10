@@ -87,12 +87,21 @@ impl Grid {
 impl fmt::Display for Grid {
     // Display all the grid and its cell state
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let mut horizontal_limiter = String::from("+");
+        for _ in 0..(self.width) {
+            horizontal_limiter.push('-');
+        }
+        horizontal_limiter.push_str("+\n");
+
+        write!(f, "{}", horizontal_limiter)?;
         for line in self.cells.iter() {
+            write!(f, "|")?;
             for cell in line.iter() {
                 write!(f, "{}", cell)?;
             }
+            write!(f, "|")?;
             write!(f, "\n")?;
         }
-        write!(f, "")
+        write!(f, "{}", horizontal_limiter)
     }
 }
