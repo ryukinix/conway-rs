@@ -9,7 +9,7 @@ use std::io;
 
 fn main() {
     let mut input = String::new();
-    let mut grid = Grid::random_grid(80, 25);
+    let mut grid = Grid::random_grid(78, 20);
     let mut generation = 0;
     loop {
         print!("{}", grid);
