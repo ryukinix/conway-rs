@@ -1,3 +1,6 @@
+//! # Just the main loop
+//! RET do a new generation
+//! C-c (CTRL-C) exits.
 extern crate conway_rs;
 
 use conway_rs::grid::Grid;
