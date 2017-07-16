@@ -14,8 +14,12 @@ fn main() {
     loop {
         print!("{}", grid);
         grid = grid.new_generation();
-        println!("(generation: {}) press RET to continue and C-c to exit.", generation);
+        println!(
+            "(generation: {}) press RET to continue and C-c to exit.",
+            generation
+        );
         let _ = io::stdin().read_line(&mut input);
         generation += 1
     }
 }
+

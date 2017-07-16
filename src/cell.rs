@@ -14,30 +14,43 @@ pub struct Cell {
 
 impl Point {
     pub fn new(x: i32, y: i32) -> Point {
-        Point{x: x, y: y}
+        Point { x: x, y: y }
     }
 }
 
-//* Automata 2D Cell implementation methods 
+//* Automata 2D Cell implementation methods
 impl Cell {
     // create a new cell
     pub fn new(state: bool, x: i32, y: i32) -> Cell {
-        Cell{alive: state, point: Point{x: x, y: y}}
+        Cell {
+            alive: state,
+            point: Point { x: x, y: y },
+        }
     }
 
     pub fn state(&self, s: bool) -> Cell {
-        Cell{alive: s,
-             point: Point{x:self.point.x, y:self.point.y}}
+        Cell {
+            alive: s,
+            point: Point {
+                x: self.point.x,
+                y: self.point.y,
+            },
+        }
     }
 
     // apply logic for a new state based on the number of neighbors
     pub fn update(&self, neighbors: u8) -> Cell {
         let state = match self.alive {
-                        true => !(neighbors < 2 || neighbors > 3),
-                        false => (neighbors == 3),
-                    };
-        Cell{alive: state, 
-             point: Point{x:self.point.x, y:self.point.y}}
+            true => !(neighbors < 2 || neighbors > 3),
+            false => (neighbors == 3),
+        };
+        Cell {
+            alive: state,
+            point: Point {
+                x: self.point.x,
+                y: self.point.y,
+            },
+        }
     }
 }
 
@@ -46,8 +59,7 @@ impl fmt::Display for Cell {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         if self.alive {
             write!(f, "•")
-        }
-        else {
+        } else {
             write!(f, " ")
         }
     }
