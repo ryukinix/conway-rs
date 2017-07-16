@@ -1,5 +1,6 @@
+[![Build Status](https://travis-ci.org/ryukinix/conway-rs.svg?branch=master)](https://travis-ci.org/ryukinix/conway-rs)
 [![Crate Version](https://img.shields.io/crates/v/conway-rs.svg)](https://crates.io/crates/conway-rs)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 # Description
 Another ~stupid~ implementation of Conways's Game of Life written in Rust language.
