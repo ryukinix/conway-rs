@@ -1,8 +1,8 @@
 [package]
-name = "conway"
+name = "conway-rs"
 version = "0.1.0"
 authors = ["Manoel Vilela <manoel_vilela@engineer.com>"]
-description = "A implementation of the Conway's game of life written in Rust"
+description = "An implementation of the Conway's game of life written in Rust"
 documentation = "https://docs.rs/conway-rs"
 repository = "https://github.com/ryukinix/conway-rs"
 keywords = ["rust", "conway"]

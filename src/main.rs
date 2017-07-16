@@ -1,6 +1,6 @@
-extern crate conway;
+extern crate conway_rs;
 
-use conway::grid::Grid;
+use conway_rs::grid::Grid;
 use std::io;
 
 fn main() {
