@@ -19,7 +19,7 @@ You need the Rust environment to build this repository. Specifically the Rust Co
 
 
 # Author
-* [Manoel Machado](https://www.github.com/ryukinix)
+* [Manoel Vilela](https://www.github.com/ryukinix)
 
 # License
 [MIT](LICENSE)
