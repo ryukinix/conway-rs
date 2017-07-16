@@ -1,7 +1,7 @@
 [package]
 name = "conway"
 version = "0.1.0"
-authors = ["Manoel Machado <manoel_vilela@engineer.com>"]
+authors = ["Manoel Vilela <manoel_vilela@engineer.com>"]
 
 [dependencies]
 rand = "0.3"
