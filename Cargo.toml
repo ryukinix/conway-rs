@@ -1,6 +1,6 @@
 [package]
 name = "conway-rs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Manoel Vilela <manoel_vilela@engineer.com>"]
 description = "An implementation of the Conway's game of life written in Rust"
 documentation = "https://docs.rs/conway-rs"
