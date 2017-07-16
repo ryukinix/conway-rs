@@ -5,3 +5,7 @@ authors = ["Manoel Vilela <manoel_vilela@engineer.com>"]
 
 [dependencies]
 rand = "0.3"
+
+[[bin]]
+name = "main"
+doc = false
