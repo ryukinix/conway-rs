@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["random_state",""]]});
+initSidebarItems({"fn":[["random_state","Return true with 25% of probability"]]});

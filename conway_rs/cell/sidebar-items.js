@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Cell",""],["Point",""]]});
+initSidebarItems({"struct":[["Cell","Automata 2D Cell implementation methods"],["Point","A simple 2D point on plane"]]});

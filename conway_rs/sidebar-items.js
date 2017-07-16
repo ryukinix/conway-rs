@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["cell",""],["grid",""],["utils",""]]});
+initSidebarItems({"mod":[["cell","This module handle the individual life of each cell."],["grid","This module handles the all cells given a struct called Grid."],["utils","This module contains the random_state function used in random_grid"]]});

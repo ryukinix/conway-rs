@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Grid",""]]});
+initSidebarItems({"struct":[["Grid","Grid abstraction as 2D plane containing the cells and its state"]]});
