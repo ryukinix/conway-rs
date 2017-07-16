@@ -1,10 +1,6 @@
-extern crate rand;
+extern crate conway;
 
-pub mod grid;
-pub mod cell;
-pub mod utils;
-
-use grid::Grid;
+use conway::grid::Grid;
 use std::io;
 
 fn main() {
@@ -22,4 +18,3 @@ fn main() {
         generation += 1
     }
 }
-
